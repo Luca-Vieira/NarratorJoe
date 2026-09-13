@@ -1,0 +1,62 @@
+[bridge]
+# Caminho compartilhado com o mod (deve bater com config do mod)
+path = "~/ai-narrator"
+
+# Intervalo base entre ciclos (segundos)
+cycle_interval_s = 60
+
+# Polling de state.json (segundos)
+poll_interval_s = 1
+
+# Timeout do mod antes de considerar morto (segundos)
+mod_dead_timeout_s = 30
+
+[llm]
+# Provider: openai | anthropic | gemini | ollama | mock
+provider = "openai"
+
+# Modelo específico do provider
+model = "gpt-4o-mini"
+
+# Temperatura (0.0 = determinístico, 1.0 = criativo)
+temperature = 0.7
+
+# Máximo de tokens de saída
+max_tokens = 300
+
+# Timeout por chamada (segundos)
+timeout_s = 30
+
+# Número de retries com backoff exponencial
+max_retries = 3
+retry_base_delay_s = 1.0
+retry_max_delay_s = 8.0
+
+# Habilitar fallback de templates se LLM falhar
+enable_fallback = true
+
+[prompt]
+# Caminho para system prompt customizado (opcional; usa default se vazio)
+system_prompt_file = ""
+
+# Idioma da narração
+language = "pt-BR"
+
+# Estilo do narrador: documentary | storyteller | playful | epic
+style = "storyteller"
+
+# Tamanho máximo da narração em caracteres
+max_chars = 400
+
+[logging]
+# Nível: DEBUG | INFO | WARNING | ERROR
+level = "INFO"
+
+# Rotação do bridge.log (ex: "10 MB", "1 day")
+rotation = "10 MB"
+
+# Retenção (ex: "7 days", "1 month")
+retention = "30 days"
+
+# Tamanho do ring buffer em memória
+ring_buffer_size = 500

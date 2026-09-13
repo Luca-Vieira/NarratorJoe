@@ -1,0 +1,9 @@
+{% set kills = activity.combat_window.kills %}
+{% if activity.combat_window.player_death %}
+O capivara caiu em combate diante do perigo. Uma derrota amarga, mas a jornada continua logo após o renascimento.
+{% elif kills %}
+{% set last_kill = kills[-1] %}
+Após trocar golpes resolutos com {{ last_kill.entity.split(':')[-1] | replace('_', ' ') }}{% if kills | length > 1 %} e outros adversários{% endif %}, o capivara prevalece. {% if activity.combat_window.damage_taken %}Restam marcas da batalha, mas nada que um bom descanso não cure.{% endif %}
+{% else %}
+A poeira do confronto finalmente baixa. O capivara firma os pés no chão, recuperando o fôlego enquanto a tensão da luta se dissipa no ar.
+{% endif %}

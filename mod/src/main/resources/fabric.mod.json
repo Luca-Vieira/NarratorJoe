@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "ai-narrator",
+  "version": "${version}",
+  "name": "AI Narrator",
+  "description": "Mod que coleta eventos do Minecraft para um narrador AI externo via Python bridge.",
+  "authors": [
+    "AI Narrator Team"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/ai-narrator/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.ainarrator.AINarratorMod"
+    ],
+    "client": [
+      "com.example.ainarrator.AINarratorClient"
+    ]
+  },
+  "mixins": [
+    "ai-narrator.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
